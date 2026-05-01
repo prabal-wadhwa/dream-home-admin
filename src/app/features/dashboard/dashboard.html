@@ -1,0 +1,72 @@
+<div class="dashboard">
+  <!-- 🔹 STATS -->
+  <div class="stats">
+    <app-stat-card
+      *ngFor="let stat of stats"
+      [title]="stat.title"
+      [value]="stat.value"
+      [growth]="stat.growth"
+      [icon]="stat.icon"
+      [color]="stat.color"
+    ></app-stat-card>
+  </div>
+  <div class="charts">
+    <!-- LEFT: REVENUE -->
+    <div class="chart-card large">
+      <div class="card-header">
+        <h4>Revenue Overview</h4>
+        <button class="filter-btn">📅 This Month</button>
+      </div>
+      <div class="revenue-summary">
+        <!-- THIS MONTH -->
+        <div class="summary-item current">
+          <div class="dot blue"></div>
+
+          <div class="content">
+            <span class="label">This Month</span>
+            <div class="value-row">
+              <h3>${{ currentMonth.revenue }}</h3>
+              <span class="growth">↑ {{ currentMonth.hike }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="divider"></div>
+
+        <!-- LAST MONTH -->
+        <div class="summary-item last">
+          <div class="dot light"></div>
+
+          <div class="content">
+            <span class="label">Last Month</span>
+            <h3>${{ lastMonth.revenue }}</h3>
+          </div>
+        </div>
+      </div>
+
+      <div echarts [options]="revenueChart" class="chart"></div>
+    </div>
+
+    <!-- RIGHT: PIE -->
+    <div class="chart-card small">
+      <div class="card-header">
+        <h4>Booking by status</h4>
+        <button class="filter-btn">📅 This Month</button>
+      </div>
+
+      <div class="pie-wrapper">
+        <div echarts [options]="statusChart" class="chart"></div>
+
+        <!-- 🔥 CUSTOM LEGEND -->
+        <div class="custom-legend">
+          <div class="legend-item"><span class="dot green"></span> Confirmed</div>
+          <div class="legend-item"><span class="dot blue"></span> Pending</div>
+          <div class="legend-item"><span class="dot orange"></span> Cancelled</div>
+          <div class="legend-item"><span class="dot purple"></span> Refund</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-bookings-table [data]="bookingsData"></app-bookings-table>
+</div>

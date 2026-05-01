@@ -1,0 +1,93 @@
+<div class="sidebar-overlay" *ngIf="isMobileOpen" (click)="closeMobileSidebar()"></div>
+<nav
+  class="sidebar"
+  [class.horizontal]="isHorizontal"
+  [class.entering]="animateEntry"
+  [class.mobile-open]="isMobileOpen"
+>
+  <div class="brand">
+    <div class="brand-box">
+      <div class="brand-container">
+        <img [src]="'/icons/logo.png'" class="brand-logo" />
+        <div class="brand-copy">
+          <h2 class="logo">Dream Home</h2>
+          <span class="brand-subtitle"> Admin </span>
+        </div>
+      </div>
+      <div class="setting-wrapper">
+        <div class="setting-button" (click)="toggleSettings($event)">
+          <img src="/icons/setting.png" class="icon" />
+        </div>
+
+        <div class="settings-menu" *ngIf="isSettingsOpen">
+          <label class="layout-toggle" *ngIf="!isMobileWidth">
+            <input type="checkbox" [checked]="isHorizontal" (change)="onToggleLayout()" />
+            <span class="slider" onclick="onToggleLayout()"></span>
+
+            <span class="toggle-label">
+              {{ isHorizontal ? 'Top Nav' : 'Sidebar' }}
+            </span>
+          </label>
+          <div class="menu-item logout" (click)="logout()">Logout</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-actions" *ngIf="isHorizontal">
+      <div class="icon-btn">
+        <img src="/icons/search.png" class="icon" />
+      </div>
+
+      <div class="icon-btn">
+        <img src="/icons/notification.png" class="icon" />
+        <span class="badge">{{ notification }}</span>
+      </div>
+
+      <div class="profile">
+        <img src="/icons/avatar.png" />
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-scroll" [class.horizontal-scroll]="isHorizontal">
+    <div class="nav-links">
+      <div *ngFor="let item of navItems; let i = index" class="nav-item" #navItem>
+        <div
+          class="nav-parent"
+          (click)="onItemClick(item, $event, i)"
+          [class.has-children]="item.children"
+          [routerLink]="item.children ? null : item.route"
+          routerLinkActive="active"
+        >
+          <img [src]="'/icons/' + item.icon + '.png'" class="nav-icon" />
+          <span>{{ item.name }}</span>
+
+          <span class="arrow" *ngIf="item.children">
+            {{ item.expanded ? '▾' : '▸' }}
+          </span>
+        </div>
+
+        <div
+          class="submenu"
+          *ngIf="item.children && item.expanded"
+          [ngStyle]="isHorizontal ? horizontalDropdownStyle : null"
+        >
+          <a
+            *ngFor="let child of item.children"
+            [routerLink]="child.route"
+            routerLinkActive="active"
+            class="submenu-item"
+            (click)="onSubmenuClick($event); closeMobileSidebar()"
+          >
+            <span class="submenu-icon">›</span>
+            <span>{{ child.name }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-tools" *ngIf="!isHorizontal">
+    <button type="button" class="sidebar-action" (click)="logout()">Logout</button>
+  </div>
+</nav>

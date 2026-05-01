@@ -1,0 +1,229 @@
+export const menuList = [
+  { name: 'Dashboard', icon: 'home', route: '/dashboard' },
+
+  {
+    name: 'Properties',
+    icon: 'home-work',
+    expanded: false,
+    children: [
+      { name: 'All Properties', icon: 'circle', route: '/properties/all' },
+      { name: 'Add New Properties', icon: 'circle', route: '/properties/add' },
+      { name: 'Property Categories', icon: 'circle', route: '/properties/categories' },
+      { name: 'Property Features', icon: 'circle', route: '/properties/features' },
+    ],
+  },
+
+  { name: 'Users', icon: 'users' },
+  {
+    name: 'Reports',
+    icon: 'reports',
+    expanded: false,
+    children: [
+      { name: 'Overview', icon: 'circle', route: '/reports/overview' },
+      { name: 'Sale Reports', icon: 'circle', route: '/reports/sale-reports' },
+      { name: 'Booking Reports', icon: 'circle', route: '/reports/booking-reports' },
+      { name: 'Payment Reports', icon: 'circle', route: '/reports/payment-reports' },
+    ],
+  },
+  { name: 'Bookings', icon: 'calendar' },
+  { name: 'Enquiries', icon: 'message-square' },
+  { name: 'Messages', icon: 'message' },
+  {
+    name: 'Payments',
+    icon: 'credit-card',
+    expanded: false,
+    children: [
+      { name: 'All Payments', icon: 'circle', route: '/payments/all' },
+      { name: 'Payment Methods', icon: 'circle', route: '/payments/methods' },
+      { name: 'Payment Details', icon: 'circle', route: '/payments/details' },
+    ],
+  },
+];
+
+export const revenueOverview = {
+  tooltip: {
+    trigger: 'axis',
+  },
+
+  legend: {
+    data: ['This Month', 'Last Month'],
+  },
+
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+  },
+
+  yAxis: {
+    type: 'value',
+  },
+
+  series: [
+    {
+      name: 'This Month',
+      type: 'line',
+      smooth: true,
+      data: [1000, 2000, 3000, 2500, 3500, 4500, 4000, 5000, 6000, 5500],
+      lineStyle: {
+        color: '#2563eb',
+        width: 3,
+      },
+      itemStyle: {
+        color: '#2563eb',
+      },
+      areaStyle: {
+        color: {
+          type: 'linear',
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            { offset: 0, color: 'rgba(37,99,235,0.3)' },
+            { offset: 1, color: 'rgba(37,99,235,0)' },
+          ],
+        },
+      },
+    },
+
+    {
+      name: 'Last Month',
+      type: 'line',
+      smooth: true,
+      data: [800, 1500, 2000, 1800, 2500, 3000, 3200, 3800, 4200, 4000],
+      lineStyle: {
+        type: 'dashed',
+        color: '#94a3b8',
+      },
+      itemStyle: {
+        color: '#94a3b8',
+      },
+    },
+  ],
+};
+export const stats = [
+  {
+    title: 'Total Revenue',
+    value: '$166,090',
+    growth: '15.6%',
+    icon: 'dollar',
+    color: '#1E0B88',
+  },
+  {
+    title: 'Total Bookings',
+    value: '220',
+    growth: '10.6%',
+    icon: 'calendar',
+    color: '#22c55e',
+  },
+  {
+    title: 'Total Properties',
+    value: '1120',
+    growth: '50.6%',
+    icon: 'home',
+    color: '#a855f7',
+  },
+  {
+    title: 'Total Users',
+    value: '150',
+    growth: '59%',
+    icon: 'contact',
+    color: '#f97316',
+  },
+];
+
+export const bookingCharts = {
+  tooltip: {
+    trigger: 'item',
+    formatter: '{b}: {c} ({d}%)',
+  },
+
+  series: [
+    {
+      type: 'pie',
+      radius: ['80%', '100%'],
+      center: ['50%', '50%'],
+
+      label: {
+        show: false,
+      },
+
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 4,
+      },
+
+      data: [
+        { value: 40, name: 'Confirmed', itemStyle: { color: '#22c55e' } },
+        { value: 25, name: 'Pending', itemStyle: { color: '#4f46e5' } },
+        { value: 15, name: 'Cancelled', itemStyle: { color: '#f59e0b' } },
+        { value: 20, name: 'Refund', itemStyle: { color: '#a855f7' } },
+      ],
+    },
+  ],
+};
+
+export const bookingsData = [
+  {
+    id: '#BK00128',
+    property: {
+      name: 'Modern Luxury Villa',
+      location: 'Beverly Hills, CA',
+      image: '/icons/property.png',
+    },
+    client: {
+      name: 'John Smith',
+      phone: '(555) 232-3223',
+    },
+    date: 'May 8, 2025',
+    time: '10:30 AM',
+    user: {
+      name: 'Michael Brown',
+      avatar: '/icons/avatar.png',
+    },
+    status: 'Confirmed',
+    amount: 2699,
+  },
+  {
+    id: '#BK00127',
+    property: {
+      name: 'Downtown Apartment',
+      location: 'New York, USA',
+      image: '/icons/property.png',
+    },
+    client: {
+      name: 'John Smith',
+      phone: '(555) 232-3223',
+    },
+    date: 'June 3, 2025',
+    time: '10:50 AM',
+    user: {
+      name: 'Emily Davis',
+      avatar: '/icons/avatar.png',
+    },
+    status: 'Confirmed',
+    amount: 4600,
+  },
+  {
+    id: '#BK00126',
+    property: {
+      name: 'Family House',
+      location: 'Austin, Texas',
+      image: '/icons/property.png',
+    },
+    client: {
+      name: 'John Smith',
+      phone: '(555) 232-3223',
+    },
+    date: 'May 8, 2025',
+    time: '10:30 AM',
+    user: {
+      name: 'Michael Jordan',
+      avatar: '/icons/avatar.png',
+    },
+    status: 'Pending',
+    amount: 23699,
+  },
+];

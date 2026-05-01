@@ -1,0 +1,23 @@
+<div class="layout" [class.horizontal]="isHorizontal" [class.mobile]="isMobile">
+  <app-sidebar
+    [isHorizontal]="!isMobile && isHorizontal"
+    [isMobileOpen]="isMobileSidebarOpen"
+    (mobileClose)="closeMobileSidebar()"
+    (toggleLayout)="toggleLayout()"
+    [isMobileWidth]="isMobile"
+  ></app-sidebar>
+
+  <div class="main">
+    <app-header
+      [isHorizontal]="!isMobile && isHorizontal"
+      (toggle)="toggleLayout()"
+      (menuToggle)="toggleMobileSidebar()"
+    ></app-header>
+
+    <div class="content">
+      <div class="content-shell">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

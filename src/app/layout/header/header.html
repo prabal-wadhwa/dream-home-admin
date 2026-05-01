@@ -1,0 +1,25 @@
+<header class="header">
+  <button type="button" class="mobile-menu" (click)="toggleMobileSidebar()">☰</button>
+  <div class="title-group">
+    <div class="page-copy">
+      <h2>{{ pageTitle }}</h2>
+    </div>
+  </div>
+  <div class="header-actions" *ngIf="!isHorizontal">
+    <div class="icon-btn">
+      <img src="/icons/search.png" class="icon" />
+    </div>
+
+    <div class="icon-btn">
+      <img src="/icons/notification.png" class="icon" />
+      <span class="badge">{{ notification }}</span>
+    </div>
+
+    <div class="profile">
+      <img src="/icons/avatar.png" />
+      <div class="profile-copy">
+        <strong>{{ user }}</strong>
+      </div>
+    </div>
+  </div>
+</header>

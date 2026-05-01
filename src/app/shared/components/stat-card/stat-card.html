@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="icon-box" [style.background]="color">
+    <img [src]="'/icons/' + icon + '.png'" />
+  </div>
+
+  <div class="card-content">
+    <p class="title">{{ title }}</p>
+    <h3 class="value">{{ value }}</h3>
+
+    <div class="growth">
+      <span class="arrow">↑</span>
+      <span class="percent">{{ growth }}</span>
+      <span class="text">vs Last Month</span>
+    </div>
+  </div>
+</div>
