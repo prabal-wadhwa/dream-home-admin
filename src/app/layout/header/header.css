@@ -10,6 +10,21 @@
   border-bottom: 1px solid rgba(148, 163, 184, 0.22);
   backdrop-filter: blur(12px);
 }
+.breadcrumb {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #64748b;
+  cursor: default;
+}
+
+.breadcrumb span {
+  color: #64748b;
+}
+
+.breadcrumb span:first-child {
+  color: #0f172a;
+  font-weight: 500;
+}
 
 .title-group {
   display: flex;
@@ -20,7 +35,7 @@
 .page-copy {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 10px;
 }
 
 .page-copy h3 {

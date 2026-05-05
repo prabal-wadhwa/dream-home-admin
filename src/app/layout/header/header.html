@@ -3,6 +3,13 @@
   <div class="title-group">
     <div class="page-copy">
       <h2>{{ pageTitle }}</h2>
+
+      <p class="breadcrumb" *ngIf="!isMobile">
+        <ng-container *ngFor="let item of breadcrumb; let i = index">
+          <span>{{ item }}</span>
+          <span *ngIf="i < breadcrumb.length - 1"> &gt; </span>
+        </ng-container>
+      </p>
     </div>
   </div>
   <div class="header-actions" *ngIf="!isHorizontal">

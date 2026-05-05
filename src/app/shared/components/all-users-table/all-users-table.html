@@ -1,0 +1,72 @@
+<div class="table-card">
+  <ngx-datatable
+    class="custom-table"
+    [rows]="rows"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [rowHeight]="80"
+    [footerHeight]="60"
+    [limit]="pageSize"
+    [offset]="pageNumber"
+    [scrollbarH]="true"
+    (page)="onPage($event)"
+  >
+    <!-- CHECKBOX -->
+    <ngx-datatable-column [width]="60" cellClass="checkbox-cell" headerClass="checkbox-cell">
+      <ng-template ngx-datatable-header-template>
+        <input type="checkbox" [checked]="isAllSelected()" (change)="toggleAll($event)" />
+      </ng-template>
+
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <input type="checkbox" [checked]="isSelected(row)" (change)="toggleRow(row, $event)" />
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- USER -->
+    <ngx-datatable-column name="Users" [width]="280">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="user">
+          <img [src]="row.avatar" />
+          <div>
+            <strong>{{ row.name }}</strong>
+            <span>ID : {{ row.id }}</span>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- EMAIL -->
+    <ngx-datatable-column name="Email" prop="email"></ngx-datatable-column>
+
+    <!-- PHONE -->
+    <ngx-datatable-column name="Phone" prop="phone"></ngx-datatable-column>
+
+    <!-- TYPE -->
+    <ngx-datatable-column name="Type" prop="type"></ngx-datatable-column>
+
+    <!-- CITY -->
+    <ngx-datatable-column name="City" prop="city"></ngx-datatable-column>
+
+    <!-- STATUS -->
+    <ngx-datatable-column name="Status">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <span class="status" [ngClass]="row.status?.toLowerCase()">
+          {{ row.status }}
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- DATE -->
+    <ngx-datatable-column name="Joined On" prop="date"></ngx-datatable-column>
+
+    <!-- ACTIONS -->
+    <ngx-datatable-column name="Actions" [width]="120">
+      <ng-template ngx-datatable-cell-template>
+        <div class="actions">
+          <button class="icon-btn">👁</button>
+          <button class="icon-btn">🗑</button>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
