@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout/layout';
 import { UsersComponent } from './features/users/users';
 import { authGuard } from './core/guards/auth-guard';
 import { Login } from './auth/login/login';
+import { NotFoundComponent } from './features/not-found-404/not-found';
 
 export const routes: Routes = [
   {
@@ -19,6 +20,10 @@ export const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'users', component: UsersComponent },
+      {
+        path: 'not-found',
+        component: NotFoundComponent,
+      },
     ],
   },
 
@@ -29,6 +34,6 @@ export const routes: Routes = [
 
   {
     path: '**',
-    redirectTo: 'dashboard',
+    redirectTo: '/not-found',
   },
 ];
