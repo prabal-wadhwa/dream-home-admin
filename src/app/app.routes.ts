@@ -18,6 +18,7 @@ import { PaymentList } from './features/payments/payment-list/payment-list';
 import { PaymentMethod } from './features/payments/payment-method/payment-method';
 import { PaymentDetail } from './features/payments/payment-detail/payment-detail';
 import { NotFoundComponent } from './features/not-found/not-found';
+import { PropertyCategory } from './features/properties/property-category/property-category';
 import { ReportsOverviewComponent } from './features/reports/reports-overview/reports-overview';
 import { SaleReportsComponent } from './features/reports/sale-reports/sale-reports';
 
@@ -38,7 +39,8 @@ export const routes: Routes = [
       { path: 'settings', component : SettingsComponent },
       { path: 'properties', component: PropertiesList },
       { path: 'properties/add-new', component: AddNewProperty },
-      { path: 'properties/categories', component: PropertyFeature },
+      { path: 'properties/categories', component: PropertyCategory },
+      { path: 'properties/feature', component: PropertyFeature },
       { path: 'reports/overview', component: ReportsOverviewComponent},
       { path: 'reports/booking-reports', component: BookingReports },
       { path: 'reports/payment-reports', component: PaymentReports},
