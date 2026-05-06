@@ -49,11 +49,12 @@ export class HeaderComponent {
       payments: 'Payments',
       settings: 'Settings',
       'add-new': 'Add New Property',
+      "booking-reports":"Booking Reports",
     };
 
     this.breadcrumb = segments.map((seg: string) => map[seg] || seg);
 
-    this.pageTitle = this.breadcrumb[0];
+    this.pageTitle = this.breadcrumb[1];
   }
 
   @Output() menuToggle = new EventEmitter<void>();

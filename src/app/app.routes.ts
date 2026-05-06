@@ -8,7 +8,6 @@ import { SettingsComponent } from './features/settings/settings';
 import { PropertiesList } from './features/properties/properties-list/properties-list';
 import { AddNewProperty } from './features/properties/add-new-property/add-new-property';
 import { PropertyFeature } from './features/properties/property-feature/property-feature';
-import { Report } from './features/reports/report/report';
 import { BookingReports } from './features/reports/booking-reports/booking-reports';
 import { PaymentReports } from './features/reports/payment-reports/payment-reports';
 import { Bookings } from './features/bookings/bookings';
