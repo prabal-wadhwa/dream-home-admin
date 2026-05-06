@@ -106,11 +106,11 @@ export class SidebarComponent implements OnInit {
   }
 
   onSubmenuClick(event: MouseEvent) {
-    event.stopPropagation();
+    // event.stopPropagation();
 
-    if (this.isHorizontal) {
-      this.navItems.forEach((item) => (item.expanded = false));
-    }
+    // if (this.isHorizontal) {
+    //   this.navItems.forEach((item) => (item.expanded = false));
+    // }
   }
 
   private expandActiveMenus() {
@@ -130,7 +130,7 @@ export class SidebarComponent implements OnInit {
     const target = event.target as HTMLElement;
 
     if (!target.closest('.nav-item')) {
-      this.navItems.forEach((item) => (item.expanded = false));
+      // this.navItems.forEach((item) => (item.expanded = false));
     }
 
     if (!target.closest('.setting-wrapper')) {
@@ -141,7 +141,7 @@ export class SidebarComponent implements OnInit {
   @HostListener('window:resize')
   closeHorizontalDropdown() {
     if (this.isHorizontal) {
-      this.navItems.forEach((item) => (item.expanded = false));
+      // this.navItems.forEach((item) => (item.expanded = false));
     }
   }
 

@@ -6,8 +6,8 @@ export const menuList = [
     icon: 'home-work',
     expanded: false,
     children: [
-      { name: 'All Properties', icon: 'circle', route: '/properties/all' },
-      { name: 'Add New Properties', icon: 'circle', route: '/properties/add' },
+      { name: 'All Properties', icon: 'circle', route: '/properties' },
+      { name: 'Add New Properties', icon: 'circle', route: '/properties/add-new' },
       { name: 'Property Categories', icon: 'circle', route: '/properties/categories' },
       { name: 'Property Features', icon: 'circle', route: '/properties/features' },
     ],
@@ -17,6 +17,7 @@ export const menuList = [
   {
     name: 'Reports',
     icon: 'reports',
+    route: '/reports',
     expanded: false,
     children: [
       { name: 'Overview', icon: 'circle', route: '/reports/overview' },
@@ -32,6 +33,7 @@ export const menuList = [
     name: 'Payments',
     icon: 'credit-card',
     expanded: false,
+    route: '/payments',
     children: [
       { name: 'All Payments', icon: 'circle', route: '/payments/all' },
       { name: 'Payment Methods', icon: 'circle', route: '/payments/methods' },

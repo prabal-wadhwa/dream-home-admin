@@ -1,0 +1,140 @@
+<div class="add-property-section">
+    <span class="title">Basic Information</span>
+    <div class="row content-section">
+
+        <div class="col-6 left-section">
+            <div class="row">
+            <div class="col-6 text">
+                <label for="property-title">Property Title<span class="text-danger">*</span></label>
+                <input type="text" id="property-title" class="form-control" [(ngModel)]="propertyData.title" placeholder="Enter property title" [ngClass]="{'error': isSubmitted &&!propertyData.title}">
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.title">Property Title is required</span>
+            </div>
+            <div class="col-6 text">
+                <label for="property-title">Property Type<span class="text-danger">*</span></label>
+                <select id="property-type" class="form-control" [(ngModel)]="propertyData.type">
+
+                    <option value="">Select property type</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="villa">Villa</option>
+                </select>
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.type">Property Type is required</span>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col-6 text">
+                <label for="property-title">Property Category<span class="text-danger">*</span></label>
+                <input type="text" id="property-title" class="form-control" [(ngModel)]="propertyData.category" placeholder="Enter property title" [ngClass]="{'error': isSubmitted && !propertyData.category}">
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.category">Property Category is required</span>
+            </div>
+            <div class="col-6 text">
+                <label for="property-title">Price<span class="text-danger">*</span></label>
+                <select id="property-type" class="form-control" [(ngModel)]="propertyData.price">
+                    <option value="">Select price</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="villa">Villa</option>
+                </select>
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.price">Price is required</span>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col-6 text">
+                <label for="property-title">Location<span class="text-danger">*</span></label>
+                <textarea id="property-title" class="form-control" [(ngModel)]="propertyData.location" placeholder="Enter property title" [ngClass]="{'error': isSubmitted && !propertyData.location}"></textarea>
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.location">Location is required</span>
+            </div>
+            <div class="col-6 text">
+                <label for="property-title">City<span class="text-danger">*</span></label>
+                <select id="property-type" class="form-control" [(ngModel)]="propertyData.city">
+                    <option value="">Select city</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="villa">Villa</option>
+                </select>
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.city">City is required</span>
+            </div>
+            </div>
+            <div class="row">
+            <div class="text">
+              <label for="property-description">Description<span class="text-danger">*</span></label>
+                <textarea id="property-description" class="form-control" [(ngModel)]="propertyData.description" placeholder="Enter description" [ngClass]="{'error': isSubmitted && !propertyData.description}"></textarea>
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.description">Description is required</span>
+            </div>
+            </div>
+            
+        </div>
+        <div class="col-6 right-section">
+            <div class="text">
+                <label for="property-title">Property Images<span class="text-danger">*</span></label>
+                <div class="upload-box text-center mb-3">
+    <div class="upload-content">
+      <!-- <i class="bi bi-cloud-upload upload-icon"></i> -->
+        <img src="/icons/upload-icon.png" class="upload-icon" />
+      <p class="mb-1">Click To Upload Images</p>
+      <small>PNG, JPG OR WEBP (max.5mb)</small>
+    </div>
+    <input type="file" multiple >
+  </div>
+                <!-- <input type="file" id="property-images" class="form-control" placeholder="Upload property images"> -->
+            </div>
+            </div>
+    </div>
+
+    <div>
+        <span class="title">Additional Detail</span>
+    <div class="row content-section">
+
+        <div class="left-section">
+            <div class="row">
+            <div class="col-4 text">
+                <label for="bedrooms">Bedrooms<span class="text-danger">*</span></label>
+                <input type="number" id="bedrooms" class="form-control" [(ngModel)]="propertyData.bedrooms" placeholder="Enter number of bedrooms" [ngClass]="{'error': isSubmitted && !propertyData.bedrooms}">
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.bedrooms">Bedrooms is required</span>
+            </div>
+            <div class="col-4 text">
+                <label for="bathrooms">Bathrooms<span class="text-danger">*</span></label>
+                <input type="number" id="bathrooms" class="form-control" [(ngModel)]="propertyData.bathrooms" placeholder="Enter number of bathrooms" [ngClass]="{'error': isSubmitted && !propertyData.bathrooms}">
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.bathrooms">Bathrooms is required</span>
+            </div>
+             <div class="col-4 text">
+                <label for="area">Area (sq ft)<span class="text-danger">*</span></label>
+                <input type="number" id="area" class="form-control" [(ngModel)]="propertyData.area" placeholder="Enter property area" [ngClass]="{'error': isSubmitted &&    !propertyData.area}">
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.area">Area is required</span>
+            </div>
+            </div>
+
+            <div class="row">
+             <div class="col-4 text">
+                <label for="year-build">Year Built<span class="text-danger">*</span></label>
+                <input type="number" id="year-build" class="form-control" [(ngModel)]="propertyData.yearBuilt" placeholder="Enter year built" [ngClass]="{'error': isSubmitted && !propertyData.yearBuilt}">
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.yearBuilt">Year Built is required</span>
+            </div>
+            <div class="col-4 text">
+                <label for="garages">Garages<span class="text-danger">*</span></label>
+                <input type="number" id="garages" class="form-control" [(ngModel)]="propertyData.garages" placeholder="Enter number of garages" [ngClass]="{'error': isSubmitted && !propertyData.garages}">
+                <span class="err-msg" *ngIf="isSubmitted && !propertyData.garages">Garages is required</span>
+            </div>
+        </div>            
+        </div>
+    </div>
+    </div>
+
+<div class="submit-section">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-6">
+                <input type="checkbox" id="featured" class="form-check-input">
+                <span style="margin-left: 10px;" for="featured" class="form-check-label">Save As Draft</span>
+            </div>
+            <div class="col-6" style="text-align: right;">
+                <button class="btn btn-secondary">Cancel</button>
+                <button class="btn btn-primary" style="margin-left: 10px;" (click)="onSave()">Submit</button>
+            </div>
+            
+         </div>
+
+        </div>
+        
+</div>
