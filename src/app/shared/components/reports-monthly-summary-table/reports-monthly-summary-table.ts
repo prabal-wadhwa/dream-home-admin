@@ -3,13 +3,12 @@ import { Component, HostListener, Input, ViewChild } from '@angular/core';
 import { DatatableComponent, NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @Component({
-  selector: 'app-sale-reports-table',
-  standalone: true,
-  imports: [NgxDatatableModule],
-  templateUrl: './sale-reports-table.html',
-  styleUrls: ['./sale-reports-table.css'],
+  selector: 'app-reports-monthly-summary-table',
+  imports: [NgxDatatableModule, NgClass],
+  templateUrl: './reports-monthly-summary-table.html',
+  styleUrl: './reports-monthly-summary-table.css',
 })
-export class SaleReportsTable {
+export class ReportsMonthlySummaryTable {
   @Input() data: any[] = [];
   @ViewChild(DatatableComponent) table!: DatatableComponent;
 
