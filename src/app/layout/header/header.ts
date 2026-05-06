@@ -47,6 +47,8 @@ export class HeaderComponent {
       enquiries: 'Enquiries',
       messages: 'Messages',
       payments: 'Payments',
+      settings: 'Settings',
+      'add-new': 'Add New Property',
     };
 
     this.breadcrumb = segments.map((seg: string) => map[seg] || seg);
