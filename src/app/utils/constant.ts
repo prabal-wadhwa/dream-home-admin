@@ -165,6 +165,38 @@ export const bookingCharts = {
   ],
 };
 
+export const salesReportsCharts = {
+  tooltip: {
+    trigger: 'item',
+    formatter: '{b}: {c} ({d}%)',
+  },
+
+  series: [
+    {
+      type: 'pie',
+      radius: ['80%', '100%'],
+      center: ['50%', '50%'],
+
+      label: {
+        show: false,
+      },
+
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 4,
+      },
+
+      data: [
+        { value: 40, name: 'Villas', itemStyle: { color: '#22c55e' } },
+        { value: 25, name: 'Apartments', itemStyle: { color: '#4f46e5' } },
+        { value: 15, name: 'Houses', itemStyle: { color: '#f59e0b' } },
+        { value: 20, name: 'Commercials', itemStyle: { color: '#a855f7' } },
+      ],
+    },
+  ],
+};
+
 export const bookingsData = [
   {
     id: '#BK00128',
@@ -325,5 +357,153 @@ export const userData = [
     type: 'Buyer',
     city: 'Dallas',
     date: 'May 30, 2025',
+  },
+];
+
+export const salesReportStats = [
+  {
+    title: 'Total Sale',
+    value: '$166,090',
+    growth: '15.6%',
+    icon: 'dollar',
+    color: '#1E0B88',
+  },
+  {
+    title: 'Properties Sold',
+    value: '220',
+    growth: '10.6%',
+    icon: 'calendar',
+    color: '#22c55e',
+  },
+  {
+    title: 'Avg Deal Value',
+    value: '1120',
+    growth: '50.6%',
+    icon: 'home',
+    color: '#a855f7',
+  },
+  {
+    title: 'Conversion Rate',
+    value: '150',
+    growth: '59%',
+    icon: 'contact',
+    color: '#f97316',
+  },
+];
+
+export const topSoldProperties = [
+  {
+    property: {
+      name: 'Modern Luxury Villa',
+      location: 'Beverly Hills, CA',
+      image: '/icons/property.png',
+    },
+    type: 'Villa',
+    location: 'California, USA',
+    amount: 850000,
+    date: 'May 12, 2025',
+    client: {
+      name: 'John Smith',
+      phone: '(555) 123-4567',
+    },
+    user: {
+      name: 'Michael Brown',
+      avatar: '/icons/avatar.png',
+    },
+  },
+  {
+    property: {
+      name: 'Downtown Apartment',
+      location: 'New York City',
+      image: '/icons/property.png',
+    },
+    type: 'Apartment',
+    location: 'New York, USA',
+    amount: 420000,
+    date: 'June 5, 2025',
+    client: {
+      name: 'Emily Davis',
+      phone: '(555) 987-6543',
+    },
+    user: {
+      name: 'Sarah Wilson',
+      avatar: '/icons/avatar.png',
+    },
+  },
+  {
+    property: {
+      name: 'Beachfront House',
+      location: 'Miami Beach',
+      image: '/icons/property.png',
+    },
+    type: 'House',
+    location: 'Florida, USA',
+    amount: 670000,
+    date: 'June 18, 2025',
+    client: {
+      name: 'Robert Johnson',
+      phone: '(555) 222-3344',
+    },
+    user: {
+      name: 'David Miller',
+      avatar: '/icons/avatar.png',
+    },
+  },
+  {
+    property: {
+      name: 'Luxury Penthouse',
+      location: 'Los Angeles',
+      image: '/icons/property.png',
+    },
+    type: 'Penthouse',
+    location: 'California, USA',
+    amount: 1200000,
+    date: 'July 2, 2025',
+    client: {
+      name: 'Sophia Martinez',
+      phone: '(555) 444-5566',
+    },
+    user: {
+      name: 'Chris Evans',
+      avatar: '/icons/avatar.png',
+    },
+  },
+  {
+    property: {
+      name: 'Suburban Family House',
+      location: 'Dallas',
+      image: '/icons/property.png',
+    },
+    type: 'House',
+    location: 'Texas, USA',
+    amount: 310000,
+    date: 'July 15, 2025',
+    client: {
+      name: 'Daniel Lee',
+      phone: '(555) 777-8899',
+    },
+    user: {
+      name: 'Olivia Brown',
+      avatar: '/icons/avatar.png',
+    },
+  },
+  {
+    property: {
+      name: 'City Studio Apartment',
+      location: 'Chicago',
+      image: '/icons/property.png',
+    },
+    type: 'Apartment',
+    location: 'Illinois, USA',
+    amount: 210000,
+    date: 'August 1, 2025',
+    client: {
+      name: 'Emma Watson',
+      phone: '(555) 333-1122',
+    },
+    user: {
+      name: 'James Anderson',
+      avatar: '/icons/avatar.png',
+    },
   },
 ];

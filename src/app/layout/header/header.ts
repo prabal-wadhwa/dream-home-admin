@@ -8,7 +8,7 @@ import { NgIf, NgFor } from '@angular/common';
   standalone: true,
   templateUrl: './header.html',
   styleUrls: ['./header.css'],
-  imports: [NgIf,NgFor],
+  imports: [NgIf, NgFor],
 })
 export class HeaderComponent {
   @Input() isHorizontal = false;
@@ -41,6 +41,7 @@ export class HeaderComponent {
       users: 'Users',
       properties: 'Properties',
       'all-properties': 'All Properties',
+      'sale-reports':"Sale Reports",
       reports: 'Reports',
       bookings: 'Bookings',
       enquiries: 'Enquiries',
@@ -50,15 +51,7 @@ export class HeaderComponent {
 
     this.breadcrumb = segments.map((seg: string) => map[seg] || seg);
 
-    if (this.breadcrumb.length === 0 || this.breadcrumb[0] !== 'Dashboard') {
-      this.breadcrumb.unshift('Dashboard');
-    }
-
-    if (this.breadcrumb.length > 1) {
-      this.pageTitle = this.breadcrumb[1];
-    } else {
-      this.pageTitle = this.breadcrumb[0];
-    }
+    this.pageTitle = this.breadcrumb[0];
   }
 
   @Output() menuToggle = new EventEmitter<void>();
