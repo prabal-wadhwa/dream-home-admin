@@ -4,7 +4,7 @@ import { LayoutComponent } from './layout/layout/layout';
 import { UsersComponent } from './features/users/users';
 import { authGuard } from './core/guards/auth-guard';
 import { Login } from './auth/login/login';
-import { NotFoundComponent } from './features/not-found-404/not-found';
+import { NotFoundComponent } from './features/not-found/not-found';
 
 export const routes: Routes = [
   {
