@@ -12,7 +12,7 @@
   <div class="charts">
     <div class="chart-card large">
       <div class="card-header">
-        <h4>Revenue Overview</h4>
+        <h4>Sales over Time</h4>
         <button class="filter-btn">📅 This Month</button>
       </div>
       <div class="revenue-summary">
@@ -45,7 +45,7 @@
 
     <div class="chart-card small">
       <div class="card-header">
-        <h4>Booking by status</h4>
+        <h4>Sale by Property</h4>
         <button class="filter-btn">📅 This Month</button>
       </div>
 
@@ -53,13 +53,13 @@
         <div echarts [options]="statusChart" class="chart"></div>
 
         <div class="custom-legend">
-          <div class="legend-item"><span class="dot green"></span> Confirmed</div>
-          <div class="legend-item"><span class="dot blue"></span> Pending</div>
-          <div class="legend-item"><span class="dot orange"></span> Cancelled</div>
-          <div class="legend-item"><span class="dot purple"></span> Refund</div>
+          <div class="legend-item"><span class="dot green"></span> Villas</div>
+          <div class="legend-item"><span class="dot blue"></span> Apartments</div>
+          <div class="legend-item"><span class="dot orange"></span> Houses</div>
+          <div class="legend-item"><span class="dot purple"></span> Commercial</div>
         </div>
       </div>
     </div>
   </div>
-  <app-bookings-table [data]="bookingsData"></app-bookings-table>
+  <app-sale-reports-table [data]="topSoldProperties"></app-sale-reports-table>
 </div>

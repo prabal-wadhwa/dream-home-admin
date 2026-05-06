@@ -1,0 +1,85 @@
+<div class="table-card">
+  <div class="table-header">
+    <h3>Monthly Summary</h3>
+    <button class="view-btn">View Full Report</button>
+  </div>
+
+  <ngx-datatable
+    class="custom-table"
+    [rows]="data"
+    [columnMode]="'force'"
+    [scrollbarH]="true"
+    [headerHeight]="50"
+    [rowHeight]="70"
+    [footerHeight]="60"
+  >
+    <!-- Month -->
+    <ngx-datatable-column name="Month" [width]="160">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="month">
+          <strong>{{ row.month }}</strong>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- Revenue -->
+    <ngx-datatable-column name="Revenue" [width]="160">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="revenue">
+          <span>{{ row.revenue }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- Bookings -->
+    <ngx-datatable-column name="Bookings" [width]="150">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="bookings">
+          <span>{{ row.bookings }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- Enquiries -->
+    <ngx-datatable-column name="Enquiries" [width]="140">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="enquiries">{{ row.enquiries }}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- Property Sold -->
+    <ngx-datatable-column name="Property Sold" [width]="160">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="propertiesSold">
+          <span>{{ row.propertiesSold }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- Average Deal Value -->
+    <ngx-datatable-column name="Avg Deal Value" [width]="160">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="avgDealValue">
+          <strong>{{ row.avgDealValue }}</strong>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- Concession Rate -->
+    <ngx-datatable-column name="Concession Rate" [width]="200">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="concession-wrapper">
+          <div class="concession-top">
+            <span class="rate">{{ row.concessionRate }}</span>
+
+            <span class="growth"> ↑ {{ row.growth }} </span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="row.progress" [ngClass]="row.status"></div>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>

@@ -1,0 +1,40 @@
+<div class="overview-card">
+  <!-- TOP -->
+  <div class="overview-top">
+    <div>
+      <h3>{{ title }}</h3>
+    </div>
+
+    <div class="actions">
+      <select class="month-select">
+        <option>This Month</option>
+        <option>Last Month</option>
+        <option>This Year</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="overview-stats">
+    <div class="stat-card" *ngFor="let item of stats">
+      <div class="stat-top" >
+        <span class="dot" [style.background]="item.color"></span>
+
+        <span class="label">
+          {{ item.label }}
+        </span>
+      </div>
+
+      <div class="stat-bottom">
+        <h4>{{ item.value }}</h4>
+
+        <span class="trend positive"> ↗ 12.5% </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <div class="chart-wrapper">
+    <div echarts [options]="chartOptions" class="chart"></div>
+  </div>
+</div>

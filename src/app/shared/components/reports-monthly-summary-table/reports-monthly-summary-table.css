@@ -1,0 +1,147 @@
+.table-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.view-btn {
+  border: 1px solid #e5e7eb;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+::ng-deep .ngx-datatable .datatable-body-cell,
+::ng-deep .ngx-datatable .datatable-header-cell {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+::ng-deep .ngx-datatable .datatable-header {
+  background: #c7e7e7;
+  font-weight: 600;
+}
+
+::ng-deep .ngx-datatable .datatable-body-row {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.month {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ================= REVENUE ================= */
+
+.revenue strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ================= CONCESSION ================= */
+
+.concession-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.concession-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rate {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.growth {
+  font-size: 12px;
+  font-weight: 700;
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress-bar {
+  width: 100%;
+  height: 7px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.progress-fill.excellent {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.progress-fill.good {
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.progress-fill.average {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.revenue {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookings {
+  display: flex;
+  flex-direction: column;
+}
+
+.enquiries {
+  display: flex;
+  flex-direction: column;
+}
+
+.propertiesSold {
+  display: flex;
+  flex-direction: column;
+}
+
+.avgDealValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.center-cell {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.concessionRate {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}

@@ -1,0 +1,83 @@
+<div class="table-card">
+  <div class="table-header">
+    <h3>Top Sold Properties</h3>
+    <button class="view-btn">View Full Report</button>
+  </div>
+
+  <ngx-datatable
+    class="custom-table"
+    [rows]="data"
+    [columnMode]="'force'"
+    [scrollbarH]="true"
+    [headerHeight]="50"
+    [rowHeight]="70"
+    [footerHeight]="60"
+  >
+    <!-- PROPERTY -->
+    <ngx-datatable-column name="Property" [width]="260">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="property">
+          <img [src]="row.property.image" />
+          <div>
+            <strong>{{ row.property.name }}</strong>
+            <span>{{ row.property.location }}</span>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- Type -->
+    <ngx-datatable-column name="Type" [width]="200">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="type">
+          <span>{{ row.type }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- LOCATION -->
+    <ngx-datatable-column name="Location" [width]="180">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="location">
+          <span>{{ row.location }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- AMOUNT -->
+    <ngx-datatable-column name="Amount" [width]="120">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="amount">${{ row.amount }}</div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- DATE -->
+    <ngx-datatable-column name="Sold On" [width]="180">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="date">
+          <span>{{ row.date }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- CLIENT -->
+    <ngx-datatable-column name="Client" [width]="200">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="client">
+          <span>{{ row.client.name }}</span>
+          <small>{{ row.client.phone }}</small>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- USER -->
+    <ngx-datatable-column name="User" [width]="180">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="user">
+          <img [src]="row.user.avatar" />
+          <span>{{ row.user.name }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
