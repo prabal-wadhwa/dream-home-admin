@@ -808,29 +808,29 @@ export const reportsOverviewMonthlySummaryData = [
 ];
 
 export const reportOverviewTableStats = [
-    {
-      label: 'Revenue',
-      value: '$166,090',
-      color: '#7c3aed',
-    },
-    {
-      label: 'Bookings',
-      value: '220',
-      color: '#10b981',
-    },
-    {
-      label: 'Enquiries',
-      value: '340',
-      color: '#f59e0b',
-    },
-    {
-      label: 'Properties Sold',
-      value: '54',
-      color: '#3b82f6',
-    },
-  ];
+  {
+    label: 'Revenue',
+    value: '$166,090',
+    color: '#7c3aed',
+  },
+  {
+    label: 'Bookings',
+    value: '220',
+    color: '#10b981',
+  },
+  {
+    label: 'Enquiries',
+    value: '340',
+    color: '#f59e0b',
+  },
+  {
+    label: 'Properties Sold',
+    value: '54',
+    color: '#3b82f6',
+  },
+];
 
-  export const reportsOverviewPieChartData = {
+export const reportsOverviewPieChartData = {
   tooltip: {
     trigger: 'item',
     formatter: '{b}: {c} ({d}%)',
@@ -861,3 +861,134 @@ export const reportOverviewTableStats = [
     },
   ],
 };
+
+export const bookingsReportsStats = [
+  {
+    title: 'Total Bookings',
+    value: '128',
+    growth: '15.6%',
+    icon: 'booking',
+    color: '#1E0B88',
+  },
+  {
+    title: 'Confirmed Bookings',
+    value: '220',
+    growth: '10.6%',
+    icon: 'check',
+    color: '#22c55e',
+  },
+  {
+    title: 'Pending Bookings',
+    value: '322',
+    growth: '50.6%',
+    icon: 'clock',
+    color: '#a855f7',
+  },
+  {
+    title: 'Cancelled Bookings',
+    value: '10',
+    growth: '59%',
+    icon: 'cross',
+    color: '#f97316',
+  },
+];
+
+export const bookingReportsChartOverview = {
+  tooltip: {
+    trigger: 'item',
+    formatter: '{b}: {c} ({d}%)',
+  },
+
+  series: [
+    {
+      type: 'pie',
+      radius: ['80%', '100%'],
+      center: ['50%', '50%'],
+
+      label: {
+        show: false,
+      },
+
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 4,
+      },
+
+      data: [
+        { value: 50, name: 'Completed', itemStyle: { color: '#22c55e' } },
+        { value: 30, name: 'Cancelled', itemStyle: { color: '#4f46e5' } },
+        { value: 20, name: 'Pending', itemStyle: { color: '#f59e0b' } },
+      ],
+    },
+  ],
+};
+
+export const recentBookingsData = [
+  {
+    bookingId: '#BK00128',
+    propertyName: 'Modern Luxury Villa',
+    propertyLocation: 'Beverly Hills, CA',
+    propertyImage: '/icons/property.png',
+    userName: 'Michael Brown',
+    userAvatar: '/icons/avatar.png',
+    status: 'Confirmed',
+    bookedOn: 'June 2, 2025',
+    amount: '$2,699',
+  },
+  {
+    bookingId: '#BK00127',
+    propertyName: 'Downtown Apartment',
+    propertyLocation: 'New York, USA',
+    propertyImage: '/icons/property.png',
+    userName: 'Emily Davis',
+    userAvatar: '/icons/avatar.png',
+    status: 'Confirmed',
+    bookedOn: 'July 15, 2025',
+    amount: '$4,600',
+  },
+  {
+    bookingId: '#BK00126',
+    propertyName: 'Family House',
+    propertyLocation: 'Austin, Texas',
+    propertyImage: '/icons/property.png',
+    userName: 'Michael Jordan',
+    userAvatar: '/icons/avatar.png',
+    status: 'Pending',
+    bookedOn: 'August 2, 2025',
+    amount: '$23,699',
+  },
+  {
+    bookingId: '#BK00125',
+    propertyName: 'Luxury Penthouse',
+    propertyLocation: 'Miami, Florida',
+    propertyImage: '/icons/property.png',
+    userName: 'Rock Johnson',
+    userAvatar: '/icons/avatar.png',
+    status: 'Confirmed',
+    bookedOn: 'August 15, 2025',
+    amount: '$50,000',
+  },
+  {
+    bookingId: '#BK00124',
+    propertyName: 'Beachfront House',
+    propertyLocation: 'Los Angeles, CA',
+    propertyImage: '/icons/property.png',
+    userName: 'Sophia Williams',
+    userAvatar: '/icons/avatar.png',
+    status: 'Cancelled',
+    bookedOn: 'September 10, 2025',
+    amount: '$18,500',
+  },
+  {
+    bookingId: '#BK00123',
+    propertyName: 'Suburban Family Home',
+    propertyLocation: 'Dallas, Texas',
+    propertyImage: '/icons/property.png',
+    userName: 'Daniel Carter',
+    userAvatar: '/icons/avatar.png',
+    status: 'Confirmed',
+    bookedOn: 'October 5, 2025',
+    amount: '$9,250',
+  },
+];

@@ -19,6 +19,7 @@
 
 .breadcrumb span {
   color: #64748b;
+  margin-right: 8px;
 }
 
 .breadcrumb span:first-child {
@@ -168,7 +169,7 @@
   background: #ef4444;
   color: white;
   font-size: 10px;
-  padding: 1px 8px;
+  padding: 5px 8px;
   border-radius: 999px;
 }
 
