@@ -25,9 +25,9 @@ export const menuList = [
       { name: 'Payment Reports', icon: 'circle', route: '/reports/payment-reports' },
     ],
   },
-  { name: 'Bookings', icon: 'calendar' },
-  { name: 'Enquiries', icon: 'message-square' },
-  { name: 'Messages', icon: 'message' },
+  { name: 'Bookings', icon: 'calendar', route: '/bookings' },
+  { name: 'Enquiries', icon: 'message-square', route: '/enquiries' },
+  { name: 'Messages', icon: 'message', route: '/messages' },
   {
     name: 'Payments',
     icon: 'credit-card',

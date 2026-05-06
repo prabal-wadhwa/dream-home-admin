@@ -1,7 +1,7 @@
 <header class="header">
   <button type="button" class="mobile-menu" (click)="toggleMobileSidebar()">☰</button>
   <div class="title-group">
-    <div class="page-copy">
+    <div class="page-copy" *ngIf="pageTitle !== 'not-found'">
       <h2>{{ pageTitle }}</h2>
 
       <p class="breadcrumb" *ngIf="!isMobile">
