@@ -11,34 +11,33 @@
     [scrollbarH]="true"
     [headerHeight]="50"
     [rowHeight]="70"
-    [footerHeight]="60"
-  >
+    [footerHeight]="60">
 
     <!-- BOOKING ID -->
     <ngx-datatable-column name="Booking ID" prop="id" [width]="140"></ngx-datatable-column>
 
     <!-- PROPERTY -->
-    <ngx-datatable-column name="Feature Name" [width]="260">
+    <ngx-datatable-column name="Cateogry Properties" [width]="260">
       <ng-template ngx-datatable-cell-template let-row="row">
         <div class="property">
           <!-- <img [src]="row.property.image" /> -->
           <div>
             <strong>{{ row.name }}</strong>
+            <span>{{ row.description }}</span>
           </div>
         </div>
       </ng-template>
     </ngx-datatable-column>
 
     <!-- CLIENT -->
-    <ngx-datatable-column name="Icon" [width]="200">
+    <ngx-datatable-column name="Properties" [width]="200">
       <ng-template ngx-datatable-cell-template let-row="row">
         <div class="client">
-          <span>{{ row.icon }} </span>
+          <span>{{ row.properties }}</span>
         </div>
       </ng-template>
     </ngx-datatable-column>
 
-    
     <!-- STATUS -->
     <ngx-datatable-column name="Status" [width]="140">
       <ng-template ngx-datatable-cell-template let-row="row">
@@ -55,10 +54,10 @@
       <ng-template ngx-datatable-cell-template let-row="row">
         <div class="date">
           <span>{{ row.added_on }}</span>
+          <!-- <small>{{ row.time }}</small> -->
         </div>
       </ng-template>
     </ngx-datatable-column>
-
 
     <!-- ACTIONS -->
     <ngx-datatable-column name="Actions" [width]="120">

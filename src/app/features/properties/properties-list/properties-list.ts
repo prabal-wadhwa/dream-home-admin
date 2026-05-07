@@ -1,9 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { propertyList } from '../../../utils/constant';
 
 @Component({
   selector: 'app-properties-list',
-  imports: [],
+  imports: [NgxDatatableModule, CommonModule],
   templateUrl: './properties-list.html',
   styleUrl: './properties-list.css',
 })
