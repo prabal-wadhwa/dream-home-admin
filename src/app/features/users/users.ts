@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { StatCardComponent } from '../../shared/components/stat-card/stat-card';
-import { userData, userStats } from '../../utils/constant';
+import { userData } from '../../utils/constant';
 import { NgFor } from '@angular/common';
 import { UsersTableComponent } from '../../shared/components/all-users-table/all-users-table';
 
@@ -26,13 +25,12 @@ interface UserFilters {
 
 @Component({
   selector: 'app-users',
-  imports: [StatCardComponent, NgFor, UsersTableComponent, FormsModule],
+  imports: [NgFor, UsersTableComponent, FormsModule],
   templateUrl: './users.html',
   styleUrl: './users.css',
 })
 export class UsersComponent {
-  stats = userStats;
-  users: UserRow[] = userData
+  users: UserRow[] = userData;
 
   filteredUsers: UserRow[] = [...this.users];
   statusOptions = this.getUniqueOptions('status');

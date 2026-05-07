@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  propertyList } from '../../../utils/constant';
 
 @Component({
   selector: 'app-properties-list',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './properties-list.html',
   styleUrl: './properties-list.css',
 })
-export class PropertiesList {}
+export class PropertiesList {
+  data:any = propertyList;
+}
