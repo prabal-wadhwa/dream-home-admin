@@ -1,0 +1,84 @@
+<div class="table-card">
+  <div class="table-header">
+    <h3>Recent Payments</h3>
+    <button class="view-btn">View All Payments</button>
+  </div>
+
+  <ngx-datatable
+    class="custom-table"
+    [rows]="data"
+    [columnMode]="'force'"
+    [scrollbarH]="true"
+    [headerHeight]="50"
+    [rowHeight]="70"
+    [footerHeight]="60"
+  >
+    <!-- Transaction Id -->
+    <ngx-datatable-column name="Transaction ID" [width]="200">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="transactionId">
+          <span>{{ row.transactionId }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- PROPERTY -->
+    <ngx-datatable-column name="Property" [width]="260">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="property">
+          <img [src]="row.propertyImage" />
+          <div>
+            <strong>{{ row.propertyName }}</strong>
+            <span>{{ row.propertyLocation }}</span>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- Client -->
+    <ngx-datatable-column name="Client" [width]="280">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="user">
+          <img [src]="row.userAvatar" />
+          <div>
+            <strong>{{ row.userName }}</strong>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- METHOD -->
+    <ngx-datatable-column name="Method" [width]="180">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="method">
+          <span>{{ row.method }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- STATUS -->
+    <ngx-datatable-column name="Status">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <span class="status" [ngClass]="row.status?.toLowerCase()">
+          {{ row.status }}
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- DATE -->
+    <ngx-datatable-column name="Booked On" [width]="180">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="date">
+          <span>{{ row.bookedOn }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- AMOUNT -->
+    <ngx-datatable-column name="Amount" [width]="120">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="amount">${{ row.amount }}</div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>

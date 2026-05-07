@@ -1,37 +1,3 @@
 <div class="dashboard">
-  <div class="stats">
-    <app-stat-card
-      *ngFor="let stat of stats"
-      [title]="stat.title"
-      [value]="stat.value"
-      [growth]="stat.growth"
-      [icon]="stat.icon"
-      [color]="stat.color"
-    ></app-stat-card>
-  </div>
-  <div class="charts">
-    <app-reports-overview-chart
-      [title]="'Overview'"
-      [stats]="overviewStats"
-      [chartOptions]="overviewChartOptions"
-    ></app-reports-overview-chart>
-
-    <div class="chart-card small">
-      <div class="card-header">
-        <h4>Booking by status</h4>
-        <button class="filter-btn">📅 This Month</button>
-      </div>
-
-      <div class="pie-wrapper">
-        <div echarts [options]="statusChart" class="chart"></div>
-      </div>
-      <div class="custom-legend">
-        <div class="legend-item"><span class="dot green"></span> Bookings</div>
-        <div class="legend-item"><span class="dot blue"></span> Revenue</div>
-        <div class="legend-item"><span class="dot orange"></span> Users</div>
-        <div class="legend-item"><span class="dot purple"></span> Properties</div>
-      </div>
-    </div>
-  </div>
   <app-reports-monthly-summary-table [data]="monthlySummaryData"></app-reports-monthly-summary-table>
 </div>
