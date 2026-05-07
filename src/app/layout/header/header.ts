@@ -41,7 +41,7 @@ export class HeaderComponent {
       users: 'Users',
       properties: 'Properties',
       'all-properties': 'All Properties',
-      'sale-reports':"Sale Reports",
+      'sale-reports': 'Sale Reports',
       reports: 'Reports',
       bookings: 'Bookings',
       enquiries: 'Enquiries',
@@ -49,7 +49,8 @@ export class HeaderComponent {
       payments: 'Payments',
       settings: 'Settings',
       'add-new': 'Add New Property',
-      "booking-reports":"Booking Reports",
+      'booking-reports': 'Booking Reports',
+      meetings: 'Meetings',
     };
 
     this.breadcrumb = segments.map((seg: string) => map[seg] || seg);

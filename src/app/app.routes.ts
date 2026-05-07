@@ -11,7 +11,6 @@ import { PropertyFeature } from './features/properties/property-feature/property
 import { BookingReports } from './features/reports/booking-reports/booking-reports';
 import { PaymentReports } from './features/reports/payment-reports/payment-reports';
 import { Bookings } from './features/bookings/bookings';
-import { Enquiries } from './features/enquiries/enquiries';
 import { Message } from './features/message/message';
 import { PaymentList } from './features/payments/payment-list/payment-list';
 import { PaymentMethod } from './features/payments/payment-method/payment-method';
@@ -20,6 +19,7 @@ import { NotFoundComponent } from './features/not-found/not-found';
 import { PropertyCategory } from './features/properties/property-category/property-category';
 import { ReportsOverviewComponent } from './features/reports/reports-overview/reports-overview';
 import { SaleReportsComponent } from './features/reports/sale-reports/sale-reports';
+import { Meetings } from './features/meetings/meetings';
 
 export const routes: Routes = [
   {
@@ -46,7 +46,7 @@ export const routes: Routes = [
       { path: 'reports/booking-reports', component: BookingReports },
       { path: 'reports/payment-reports', component: PaymentReports},
       { path: 'bookings', component: Bookings},
-      { path: 'enquiries', component: Enquiries},
+      { path: 'meetings', component: Meetings},
       { path: 'messages', component: Message},
       { path: 'payments/all', component: PaymentList},
       { path: 'payments/methods', component: PaymentMethod},

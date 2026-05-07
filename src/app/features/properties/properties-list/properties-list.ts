@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { propertyList } from '../../../utils/constant';
+import { bookingsData, propertyList } from '../../../utils/constant';
 
 @Component({
   selector: 'app-properties-list',
@@ -10,5 +10,5 @@ import { propertyList } from '../../../utils/constant';
   styleUrl: './properties-list.css',
 })
 export class PropertiesList {
-  data: any = propertyList;
+  data:any = propertyList;
 }

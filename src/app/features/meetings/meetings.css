@@ -1,0 +1,211 @@
+/* ================= BODY ================= */
+.dashboard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ================= STATS ================= */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* ================= FILTER BAR ================= */
+.users-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #dbe3ea;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ================= SEARCH ================= */
+.search-control {
+  position: relative;
+  flex: 1 1 240px;
+  min-width: 200px;
+}
+
+.search-control input {
+  width: 100%;
+  height: 38px;
+  padding: 0 14px 0 40px;
+  border: 1px solid #dbe3ea;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-control input::placeholder {
+  color: #7b8491;
+}
+
+.search-control input:focus {
+  border-color: #0891b2;
+  box-shadow: 0 0 0 2px rgba(8, 145, 178, 0.14);
+}
+
+/* SEARCH ICON */
+.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #8d96a3;
+  border-radius: 50%;
+}
+
+.search-icon::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  bottom: -2px;
+  width: 7px;
+  height: 2px;
+  background: #8d96a3;
+  transform: rotate(45deg);
+}
+
+/* ================= DROPDOWNS ================= */
+.users-filter-bar select {
+  flex: 1 1 140px;
+  min-width: 130px;
+  height: 38px;
+  padding: 0 30px 0 12px;
+  border: 1px solid #dbe3ea;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.users-filter-bar select:focus {
+  border-color: #0891b2;
+  box-shadow: 0 0 0 2px rgba(8, 145, 178, 0.14);
+}
+
+/* ================= CLEAR BUTTON ================= */
+.clear-filter-button {
+  flex: 0 0 38px;
+  height: 38px;
+  border: 1px solid #dbe3ea;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-filter-button:hover:not(:disabled) {
+  border-color: #ef4444;
+  background: #fff5f5;
+}
+
+.clear-filter-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* CLEAR ICON */
+.clear-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.clear-icon::before,
+.clear-icon::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 1px;
+  width: 14px;
+  height: 2px;
+  background: #334155;
+}
+
+.clear-icon::before {
+  transform: rotate(45deg);
+}
+
+.clear-icon::after {
+  transform: rotate(-45deg);
+}
+
+/* ================= TABLE WRAPPER ================= */
+.table-card {
+  width: 100%;
+  overflow-x: auto; /* 🔥 IMPORTANT */
+}
+
+/* ngx table width fix */
+::ng-deep .ngx-datatable {
+  min-width: 900px;
+  width: 100% !important;
+}
+
+/* prevent wrapping */
+::ng-deep .datatable-body-cell,
+::ng-deep .datatable-header-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .body {
+    padding: 12px;
+  }
+
+  .users-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-control,
+  .users-filter-bar select,
+  .clear-filter-button {
+    width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* table scroll */
+  .table-card {
+    overflow-x: auto;
+  }
+
+  ::ng-deep .ngx-datatable {
+    min-width: 800px;
+  }
+}
