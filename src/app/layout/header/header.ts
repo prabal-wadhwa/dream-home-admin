@@ -51,6 +51,7 @@ export class HeaderComponent {
       'add-new': 'Add New Property',
       'booking-reports': 'Booking Reports',
       meetings: 'Meetings',
+      "all-payments":"All Payments"
     };
 
     this.breadcrumb = segments.map((seg: string) => map[seg] || seg);

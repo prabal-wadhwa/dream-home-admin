@@ -1,1 +1,42 @@
-<p>payment-list works!</p>
+<div class="dashboard">
+  <div class="users-filter-bar">
+    <label class="search-control">
+      <span class="search-icon" aria-hidden="true"></span>
+      <input
+        type="text"
+        placeholder="Search users"
+        [(ngModel)]="filters.search"
+        (ngModelChange)="applyFilters()"
+      />
+    </label>
+
+    <select [(ngModel)]="filters.status" (ngModelChange)="applyFilters()">
+      <option value="">All Status</option>
+      <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+    </select>
+
+    <select [(ngModel)]="filters.paymentType" (ngModelChange)="applyFilters()">
+      <option value="">All Payment Methods</option>
+      <option *ngFor="let type of paymentTypeOptions" [value]="type">{{ type }}</option>
+    </select>
+
+    <select [(ngModel)]="filters.city" (ngModelChange)="applyFilters()">
+      <option value="">All Cities</option>
+      <option *ngFor="let city of cityOptions" [value]="city">{{ city }}</option>
+    </select>
+
+    <button
+      type="button"
+      class="clear-filter-button"
+      aria-label="Clear filters"
+      title="Clear filters"
+      [disabled]="!hasActiveFilters()"
+      (click)="clearFilters()"
+    >
+      <span class="clear-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div>
+    <app-all-payments-table [rows]="filteredPaymentData"></app-all-payments-table>
+  </div>
+</div>
