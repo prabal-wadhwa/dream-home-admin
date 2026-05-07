@@ -1,0 +1,61 @@
+<div  ngSkipHydration>
+<ngx-datatable
+      class="bootstrap"
+      [rows]="rows"
+      [columns]="columns"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="tableName == 'create_table' ? 0 :50"
+      (activate)="onActivate($event)"
+      [rowHeight]="'auto'">
+      <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+    <ng-template let-row="row"  ngx-datatable-cell-template let-rowIndex="rowIndex">
+      <mat-icon *ngIf="row.id && tableName != 'create_table'" class="icon" (click)="onSettingsClick(row, rowIndex)">settings</mat-icon>
+      <mat-icon *ngIf="!row.id && tableName != 'create_table'" class="icon" (click)="onDeleteClick(row, rowIndex)">delete</mat-icon>
+    </ng-template>
+
+  </ngx-datatable-column>
+       <ngx-datatable-column
+    *ngFor="let column of columns"
+    [name]="column.name"
+    [prop]="column.prop">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+     
+      <div *ngIf="column.type == 'number' && !row.id">
+        <input type="number" [disabled]="column.editable === false" [(ngModel)]="row[column.prop]" placeholder="0" class="form-control form-control-sm text" />
+      </div>
+      <div *ngIf="column.type == 'file' && !row.id">
+        <input type="file" *ngIf="!row[column.prop]" [disabled]="column.editable === false" [(ngModel)]="row[column.prop]" (change)="onFileChange($event, row, column.prop)" placeholder="Choose file" class="form-control form-control-sm text" />
+        <span *ngIf="row[column.prop]"><mat-icon  class="icon ms-2" (click)="onCancel(row, column.prop)">cancel</mat-icon></span>
+        <img *ngIf="row[column.prop]" [src]="row.preview" alt="Preview" class="img-preview mt-2" />
+      </div>
+      <div *ngIf="column.type == 'email' && !row.id">
+        <input type="email" [disabled]="column.editable === false" [(ngModel)]="row[column.prop]" placeholder="{{column.columnName}}"  class="form-control form-control-sm text" />
+      </div>
+      <div *ngIf="column.type == 'text' && !row.id">
+        <input type="text" [disabled]="column.editable === false" [(ngModel)]="row[column.prop]" placeholder="{{column.columnName}}" class="form-control form-control-sm text" />
+      </div>
+      <div *ngIf="column.type == 'checkbox' && !row.id">
+        <input type="checbox" [disabled]="column.editable === false" [(ngModel)]="row[column.prop]" placeholder="{{column.columnName}}" class="form-control form-control-sm text" />
+      </div>
+      <div *ngIf="column.type == 'radio' && !row.id">
+        <input type="radio" [disabled]="column.editable === false" [(ngModel)]="row[column.prop]" placeholder="{{column.columnName}}" class="form-control form-control-sm text" />
+      </div>
+
+      <div *ngIf="column.type == 'dropdown' && !row.id">
+        <select [disabled]="column.editable === false" [(ngModel)]="row[column.prop]" class="form-control form-control-sm text">
+             <option value=""  selected hidden>Select</option>
+          <option *ngFor="let option of column.options" [value]="option">{{ option }}</option>
+        </select>
+      </div>
+
+       <span *ngIf="row.id && column.type != 'file'">{{ row[column.prop]}}</span>
+
+        <span *ngIf="row.id && column.type == 'file'">
+          <img *ngIf="row[column.prop]" [src]="apiUrl  + row[column.prop]" alt="Preview" class="img-preview mt-2" />
+           <span *ngIf="!row[column.prop]">No file</span>
+        </span>
+    </ng-template>
+  </ngx-datatable-column>
+      </ngx-datatable>
+ </div>

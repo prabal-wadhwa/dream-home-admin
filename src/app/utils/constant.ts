@@ -42,6 +42,172 @@ export const menuList = [
   },
 ];
 
+export const propertyCategories = [
+    {
+      id: 1,
+      name: "Apartment",
+      description: "Residential properties in buildings",
+      properties: 45,
+      status: "Active",
+      added_on: "2025-05-02"
+    },
+    {
+      id: 2,
+      name: "Villa",
+      description: "Luxury Villa & Design",
+      properties: 40,
+      status: "Active",
+      added_on: "2025-05-06"
+    },
+    {
+      id: 3,
+      name: "House",
+      description: "Independent House & Bungalow",
+      properties: 55,
+      status: "Active",
+      added_on: "2025-06-12"
+    },
+    {
+      id: 4,
+      name: "Commercial",
+      description: "Commercial and office spaces",
+      properties: 41,
+      status: "Active",
+      added_on: "2025-07-17"
+    },
+    {
+      id: 5,
+      name: "Land",
+      description: "Plots for Sale",
+      properties: 35,
+      status: "Active",
+      added_on: "2025-07-19"
+    },
+    {
+      id: 6,
+      name: "Studio",
+      description: "Studio apartments and units",
+      properties: 20,
+      status: "Inactive",
+      added_on: "2025-08-12"
+    }
+]
+
+export const propertyFeature = [
+    {
+      id: 1,
+      name: "Swimming pool",
+      icon: "pool",
+      status: "Active",
+      added_on: "2025-05-02"
+    },
+    {
+      id: 2,
+      name: "Parking",
+      icon: "car",
+      status: "Active",
+      added_on: "2025-05-06"
+    },
+    {
+      id: 3,
+      name: "Air Conditioning",
+      icon: "snowflake",
+      status: "Active",
+      added_on: "2025-06-12"
+    },
+    {
+      id: 4,
+      name: "WiFi",
+      icon: "wifi",
+      status: "Active",
+      added_on: "2025-07-17"
+    },
+    {
+      id: 5,
+      name: "Gym",
+      icon: "dumbbell",
+      status: "Active",
+      added_on: "2025-07-19"
+    },
+    {
+      id: 6,
+      name: "Garden",
+      icon: "plant",
+      status: "Inactive",
+      added_on: "2025-08-12"
+    }
+  ]
+
+  export const propertyList = [
+    {
+      id: "PRP001",
+      title: "Modern Luxury Villa",
+      type: "Villa",
+      location: "Beverly Hills, US",
+      price: 250000,
+      status: "Published",
+      featured: true,
+      added_on: "2025-05-02",
+      image: '/icons/property.png'
+    },
+    {
+      id: "PRP002",
+      title: "Family villa",
+      type: "Villa",
+      location: "New York, USA",
+      price: 350000,
+      status: "Published",
+      featured: true,
+      added_on: "2025-06-02",
+      image: '/icons/pro-one.png'
+    },
+    {
+      id: "PRP003",
+      title: "Town Apartment",
+      type: "Apartment",
+      location: "Austin, Texas",
+      price: 50000,
+      status: "Published",
+      featured: false,
+      added_on: "2025-07-15",
+      image: '/icons/pro-two.png'
+    },
+    {
+      id: "PRP004",
+      title: "Beach front House",
+      type: "House",
+      location: "Miami, Florida",
+      price: 80000,
+      status: "Pending",
+      featured: true,
+      added_on: "2025-08-02",
+      image: '/icons/pro-3.png'
+    },
+    {
+      id: "PRP005",
+      title: "Luxury penthouse",
+      type: "Penthouse",
+      location: "Los Angeles, CA",
+      price: 135000,
+      status: "Draft",
+      featured: false,
+      added_on: "2025-08-15",
+      image: '/icons/pro-4.png'
+    },
+    {
+      id: "PRP006",
+      title: "suburn family house",
+      type: "House",
+      location: "Dallas, Texas",
+      price: 10000,
+      status: "Published",
+      featured: true,
+      added_on: "2026-03-02",
+      image: '/icons/pro-two.png'
+    }
+  ]
+
+
 export const revenueOverview = {
   tooltip: {
     trigger: 'axis',
