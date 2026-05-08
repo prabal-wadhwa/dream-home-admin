@@ -1,1 +1,198 @@
-<p>payment-detail works!</p>
+<!-- payment-details.html -->
+
+<div class="payment-page">
+  <!-- HEADER -->
+  <div class="page-header">
+    <div class="header-actions">
+      <button class="secondary-btn">Download Invoice</button>
+      <button class="primary-btn">Refund Payment</button>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="payment-grid">
+    <!-- LEFT -->
+    <div class="left-column">
+      <!-- PAYMENT CARD -->
+      <div class="card payment-card">
+        <div class="card-top">
+          <div>
+            <span class="card-label">Payment Overview</span>
+            <h3>{{ paymentData.payment.id }}</h3>
+          </div>
+
+          <span class="status-badge" [ngClass]="paymentData.payment.status.toLowerCase()">
+            {{ paymentData.payment.status }}
+          </span>
+        </div>
+
+        <div class="amount-section">
+          <span>Total Amount</span>
+          <h1>{{ paymentData.payment.amount }}</h1>
+        </div>
+
+        <div class="payment-method">
+          <div class="method-icon">
+            <img [src]="paymentData.payment.method.icon" />
+          </div>
+
+          <div>
+            <strong>{{ paymentData.payment.method.type }}</strong>
+            <p>{{ paymentData.payment.method.card }}</p>
+          </div>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-item">
+            <span>Transaction ID</span>
+            <strong>{{ paymentData.payment.transactionId }}</strong>
+          </div>
+
+          <div class="overview-item">
+            <span>Payment Date</span>
+
+            <strong>
+              {{ paymentData.payment.date }}
+            </strong>
+          </div>
+
+          <div class="overview-item">
+            <span>Payment Time</span>
+
+            <strong>
+              {{ paymentData.payment.time }}
+            </strong>
+          </div>
+
+          <div class="overview-item">
+            <span>Billing Email</span>
+
+            <strong>
+              {{ paymentData.payment.billingEmail }}
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROPERTY -->
+      <div class="card property-card">
+        <div class="section-title">
+          <h3>Property Information</h3>
+        </div>
+
+        <div class="property-wrapper">
+          <img class="property-image" [src]="paymentData.property.image" />
+
+          <div class="property-content">
+            <h3>{{ paymentData.property.name }}</h3>
+
+            <p>{{ paymentData.property.location }}</p>
+
+            <div class="property-badges">
+              <span>{{ paymentData.property.type }}</span>
+              <span>{{ paymentData.property.area }}</span>
+            </div>
+
+            <div class="property-details">
+              <div>
+                <span>Property ID</span>
+                <strong>{{ paymentData.property.id }}</strong>
+              </div>
+
+              <div>
+                <span>Bedrooms</span>
+                <strong>{{ paymentData.property.bedrooms }}</strong>
+              </div>
+
+              <div>
+                <span>Bathrooms</span>
+                <strong>{{ paymentData.property.bathrooms }}</strong>
+              </div>
+
+              <div>
+                <span>Price</span>
+                <strong>{{ paymentData.property.price }}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BREAKDOWN -->
+      <div class="card breakdown-card">
+        <div class="section-title">
+          <h3>Payment Breakdown</h3>
+        </div>
+
+        <div class="breakdown-row" *ngFor="let item of paymentData.breakdown">
+          <span>{{ item.title }}</span>
+          <strong>{{ item.value }}</strong>
+        </div>
+
+        <div class="breakdown-total">
+          <span>Total Paid</span>
+          <h2>{{ paymentData.payment.amount }}</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-column">
+      <!-- USER -->
+      <div class="card user-card">
+        <div class="section-title">
+          <h3>User Information</h3>
+        </div>
+
+        <div class="user-wrapper">
+          <img [src]="paymentData.user.avatar" />
+
+          <div class="user-content">
+            <h3>{{ paymentData.user.name }}</h3>
+
+            <p>{{ paymentData.user.email }}</p>
+
+            <span>{{ paymentData.user.phone }}</span>
+
+            <div class="user-tags">
+              <span>{{ paymentData.user.role }}</span>
+              <span>Joined {{ paymentData.user.joined }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="card timeline-card">
+        <div class="section-title">
+          <h3>Payment Timeline</h3>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item" *ngFor="let item of paymentData.timeline">
+            <div class="timeline-dot" [ngClass]="{ active: item.completed }">
+              {{ item.completed ? '✓' : '' }}
+            </div>
+
+            <div class="timeline-content">
+              <h4>{{ item.title }}</h4>
+
+              <span>{{ item.date }}</span>
+
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTES -->
+      <div class="card notes-card">
+        <div class="section-title">
+          <h3>Additional Notes</h3>
+        </div>
+
+        <p>{{ paymentData.notes }}</p>
+      </div>
+    </div>
+  </div>
+</div>

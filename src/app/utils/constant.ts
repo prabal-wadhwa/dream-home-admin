@@ -1514,3 +1514,86 @@ export const allPaymentsData = [
     paymentType: 'Mastercard',
   },
 ];
+
+export const paymentDetailsData = {
+  payment: {
+    id: '#PAY00125',
+    transactionId: 'TNX795615542',
+    status: 'Paid',
+    amount: '$20,000',
+    date: 'May 12, 2026',
+    time: '9:30 AM',
+    billingEmail: 'michaelbrown@gmail.com',
+    method: {
+      type: 'Visa',
+      icon: '/icons/visa.png',
+      card: '**** 2275',
+    },
+  },
+
+  user: {
+    name: 'Michael Brown',
+    email: 'michaelbrown@gmail.com',
+    phone: '(555) 234-54751',
+    avatar: '/icons/avatar.png',
+    role: 'Premium Buyer',
+    joined: 'Jan 2025',
+  },
+
+  property: {
+    id: 'PR00124',
+    name: 'Family Villa',
+    image: '/icons/property.png',
+    location: 'Miami, Florida',
+    type: 'Villa',
+    price: '$25,000',
+    bedrooms: 4,
+    bathrooms: 3,
+    area: '2400 sqft',
+  },
+
+  breakdown: [
+    {
+      title: 'Property Price',
+      value: '$18,500',
+    },
+    {
+      title: 'Service Fee',
+      value: '$1,000',
+    },
+    {
+      title: 'Taxes',
+      value: '$500',
+    },
+  ],
+
+  timeline: [
+    {
+      title: 'Payment Initiated',
+      description: 'Payment initiated by Michael Brown',
+      date: 'May 12, 2026 • 9:30 AM',
+      completed: true,
+    },
+    {
+      title: 'Payment Processing',
+      description: 'Secure transaction verification completed',
+      date: 'May 12, 2026 • 9:35 AM',
+      completed: true,
+    },
+    {
+      title: 'Payment Completed',
+      description: 'Amount transferred successfully',
+      date: 'May 12, 2026 • 9:40 AM',
+      completed: true,
+    },
+    {
+      title: 'Invoice Generated',
+      description: 'Invoice sent to customer email',
+      date: 'Pending',
+      completed: false,
+    },
+  ],
+
+  notes:
+    'Payment received successfully through Visa ending in 2275. Invoice generation is currently pending approval.',
+};
