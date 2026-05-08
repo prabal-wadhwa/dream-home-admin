@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { PaymentMethodsTableComponent } from "../../../shared/components/payment-methods-table/payment-methods-table";
 
 @Component({
   selector: 'app-payment-method',
-  imports: [],
+  imports: [PaymentMethodsTableComponent],
   templateUrl: './payment-method.html',
   styleUrl: './payment-method.css',
 })

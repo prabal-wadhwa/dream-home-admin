@@ -1,0 +1,69 @@
+<!-- payment-methods-table.html -->
+
+<div class="table-card">
+  <ngx-datatable
+    class="custom-table"
+    [rows]="rows"
+    [columnMode]="'force'"
+    [headerHeight]="60"
+    [rowHeight]="118"
+    [footerHeight]="60"
+    [limit]="pageSize"
+    [offset]="pageNumber"
+    [scrollbarH]="true"
+    (page)="onPage($event)"
+  >
+    <!-- METHOD -->
+    <ngx-datatable-column name="Method" [width]="160">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="method">
+          <div class="method-image">
+            <img [src]="row.image" [alt]="row.method" />
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- DETAILS -->
+    <ngx-datatable-column name="Details" [width]="200">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="details">
+          <strong>{{ row.details }}</strong>
+          <span>{{ row.subDetails }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- TYPE -->
+    <ngx-datatable-column name="Type" [width]="180">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <span class="type-badge" [ngClass]="row.type.toLowerCase().replace(' ', '-')">
+          {{ row.type }}
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- STATUS -->
+    <ngx-datatable-column name="Status" [width]="160">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <span class="status-badge" [ngClass]="row.status.toLowerCase()">
+          {{ row.status }}
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <!-- ACTION -->
+    <ngx-datatable-column name="Action" [width]="160">
+      <ng-template ngx-datatable-cell-template let-row="row">
+        <div class="actions">
+          <label class="switch">
+            <input type="checkbox" [checked]="row.enabled" (change)="toggleStatus(row)" />
+            <span class="slider"></span>
+          </label>
+
+          <button class="menu-btn">⋮</button>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>

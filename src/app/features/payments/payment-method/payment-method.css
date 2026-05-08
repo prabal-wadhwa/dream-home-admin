@@ -1,0 +1,9 @@
+.dashboard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}

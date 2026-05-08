@@ -1,0 +1,212 @@
+/* payment-methods-table.css */
+
+.table-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+/* TABLE */
+
+::ng-deep .ngx-datatable {
+  background: transparent;
+}
+
+::ng-deep .ngx-datatable .datatable-header {
+  background: #c7e7e7;
+  border-radius: 12px 12px 0 0;
+}
+
+::ng-deep .ngx-datatable .datatable-header-cell {
+  display: flex;
+  align-items: center;
+  padding: 18px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: uppercase;
+}
+
+::ng-deep .ngx-datatable .datatable-body-row {
+  border-bottom: 1px solid #edf2f7;
+}
+
+::ng-deep .ngx-datatable .datatable-body-cell {
+  display: flex;
+  align-items: center;
+  padding: 18px 20px;
+}
+
+/* METHOD */
+
+.method-image {
+  width: 70px;
+  height: 58px;
+  border: 1px solid #dbe3ea;
+  border-radius: 14px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.method-image img {
+  max-width: 62px;
+  max-height: 42px;
+  object-fit: contain;
+}
+
+/* DETAILS */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.details strong {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 700;
+}
+
+.details span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* BADGES */
+
+.type-badge,
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.type-badge.credit-card {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.type-badge.bank-account {
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+.type-badge.e-wallet {
+  background: #f3e8ff;
+  color: #a855f7;
+}
+
+.type-badge.payment-gateway {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.status-badge.active {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status-badge.inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ACTIONS */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* SWITCH */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 999px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: #1d7be7;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+/* MENU BUTTON */
+
+.menu-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #dbe3ea;
+  background: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.menu-btn:hover {
+  background: #f8fafc;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .table-card {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  ::ng-deep .ngx-datatable .datatable-header-cell,
+  ::ng-deep .ngx-datatable .datatable-body-cell {
+    padding: 14px;
+  }
+
+  .details strong {
+    font-size: 14px;
+  }
+
+  .details span {
+    font-size: 12px;
+  }
+}
