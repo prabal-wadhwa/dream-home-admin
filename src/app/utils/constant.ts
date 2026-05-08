@@ -36,7 +36,7 @@ export const menuList = [
     route: '/payments',
     children: [
       { name: 'All Payments', icon: 'circle', route: '/payments/all-payments' },
-      { name: 'Payment Methods', icon: 'circle', route: '/payments/methods' },
+      { name: 'Payment Methods', icon: 'circle', route: '/payments/payment-methods' },
       { name: 'Payment Details', icon: 'circle', route: '/payments/details' },
     ],
   },

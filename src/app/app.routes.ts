@@ -49,7 +49,7 @@ export const routes: Routes = [
       { path: 'meetings', component: Meetings},
       { path: 'messages', component: Message},
       { path: 'payments/all-payments', component: PaymentList},
-      { path: 'payments/methods', component: PaymentMethod},
+      { path: 'payments/payment-methods', component: PaymentMethod},
       { path: 'payments/details', component: PaymentDetail},
       { path: 'reports/overview', component: ReportsOverviewComponent },
       { path: 'reports/sale-reports', component: SaleReportsComponent },
